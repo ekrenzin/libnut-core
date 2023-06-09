@@ -70,12 +70,12 @@ bool resizeWindow(const WindowHandle windowHandle, const MMRect& rect) {
     HWND hWnd = reinterpret_cast<HWND>(windowHandle);
     if (IsWindow(hWnd)) {
         //size
-        int width = rect.width;
-        int height = rect.height;
+        int width = rect.size.width;
+        int height = rect.size.height;
 
         //origin
-        int x = rect.position.x;
-        int y = rect.position.y;
+        int x = rect.origin.x;
+        int y = rect.origin.y;
 
         return MoveWindow(hWnd, x, y, width, height, TRUE);
     }
